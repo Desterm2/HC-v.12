@@ -38,7 +38,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #9b59b6; /* Roxo claro para hover */
+    color: #9b59b6; /* Roxo claro */
 }
 
 /* Seção principal do imóvel */
@@ -68,6 +68,7 @@ nav ul li a:hover {
     color: #8e44ad; /* Roxo */
 }
 
+/* Galeria de imagens */
 .imovel-gallery {
     display: flex;
     gap: 20px;
@@ -85,6 +86,7 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+/* Descrição do imóvel */
 .imovel-description {
     margin-bottom: 30px;
 }
@@ -136,4 +138,66 @@ footer a {
 
 footer a:hover {
     color: #8e44ad; /* Roxo */
+}
+
+/* ----------------- */
+/* Responsividade */
+/* ----------------- */
+
+/* Garantir que as imagens não ultrapassem as bordas da tela */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layout para telas menores que 1024px (tablets) */
+@media (max-width: 1024px) {
+    .imovel-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imovel-header h2 {
+        font-size: 2em;
+    }
+
+    .imovel-header span {
+        font-size: 1.2em;
+    }
+
+    .imovel-gallery {
+        flex-wrap: wrap; /* Imagens se reorganizam em várias linhas */
+    }
+}
+
+/* Layout para telas menores que 768px (celulares) */
+@media (max-width: 768px) {
+    .imovel-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Reorganiza a galeria de imagens em coluna */
+    .imovel-gallery {
+        flex-direction: column; /* Altera a direção para coluna, empilhando as imagens */
+    }
+
+    .imovel-gallery img {
+        max-width: 100%; /* Garante que a imagem ocupe 100% da largura disponível */
+        margin-bottom: 20px; /* Espaço entre as imagens */
+    }
+
+    .imovel-description {
+        text-align: center;
+    }
+
+    .contact-button {
+        font-size: 1.2em;
+        padding: 8px 16px;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
 }
